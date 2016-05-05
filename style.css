@@ -38,6 +38,7 @@ body {
     list-style-type: none;
     margin: 0;
     padding: 0;
+    text-align: left;
     font-family: 'exoticamedium', helvetica, sans-serif;
 }
 ul, li {

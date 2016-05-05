@@ -34,24 +34,27 @@ body {
     padding-top: 15px;
     padding-bottom: 60px;
 }
-#nav {
+ul#read {
     list-style-type: none;
     margin: 0;
     padding: 0;
-    text-align: left;
+}
+ul#nav {
+    width: 1000px;
+    margin: auto;
+    padding-top: 15px;
+    padding-bottom: 80px;
     font-family: 'exoticamedium', helvetica, sans-serif;
 }
-ul, li {
+ul#nav li {
     margin: 0;
     padding: 0;
     overflow: hidden;
-}
-ul li {
     float: left;
     list-style: none;
     margin-right: 1em;
 }
-li a {
+ul#nav li a {
     color: #544738;
     text-decoration: none;
     float: left;
@@ -61,7 +64,7 @@ li a {
     padding-right: 35px;
     padding-left: 35px;
 }
-li a:hover {
+ul#nav li a:hover {
     color: #7eb9be;
 }
 

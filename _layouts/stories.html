@@ -1,0 +1,25 @@
+---
+layout: compress
+---
+
+<!DOCTYPE html>
+<html>
+
+  {% include head.html %}
+
+  <style type="text/css">
+
+    {% capture include_to_scssify %}
+      {% include stories.scss %}
+    {% endcapture %}
+    {{ include_to_scssify | scssify }}
+
+  </style>
+
+<body>
+    <div class="home-base">
+        {{ content }}
+    <div/>
+</body>
+
+</html>

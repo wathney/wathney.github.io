@@ -1,0 +1,62 @@
+@charset "utf-8";
+/**
+*
+*/
+// Our variables
+$stories-color: rgb(153, 204, 255);
+$photos-color: rgb(179, 255, 179);
+$blog-color: rgb(236, 236, 198);
+$contact-color: rgb(255, 179, 179);
+$main-menu-backround-color: rgb(204, 204, 204);
+/**
+*
+*/
+///
+/// Viewport sized typography with minimum and maximum values
+///
+/// @author Eduardo Boucas (@eduardoboucas)
+///
+/// @param {Number}   $responsive  - Viewport-based size
+/// @param {Number}   $min         - Minimum font size (px)
+/// @param {Number}   $max         - Maximum font size (px)
+///                                  (optional)
+/// @param {Number}   $fallback    - Fallback for viewport-
+///                                  based units (optional)
+///
+/// @example scss - 5vw font size (with 50px fallback),
+///                 minumum of 35px and maximum of 150px
+///  @include responsive-font(5vw, 35px, 150px, 50px);
+///
+/**
+*/
+@mixin responsive-font($responsive, $min, $max: false, $fallback: false) {
+    $responsive-unitless: $responsive / ($responsive - $responsive + 1);
+    $dimension: if(unit($responsive) == 'vh', 'height', 'width');
+    $min-breakpoint: $min / $responsive-unitless * 100;
+    /**/
+    @media (max-#{$dimension}: #{$min-breakpoint}) {
+        font-size: $min;
+    }
+    /**/
+    @if $max {
+        $max-breakpoint: $max / $responsive-unitless * 100;
+        /**/
+        @media (min-#{$dimension}: #{$max-breakpoint}) {
+            font-size: $max;
+        }
+    }
+    /**/
+    @if $fallback {
+        font-size: $fallback;
+    }
+    /**/
+    font-size: $responsive;
+}
+/**
+*
+*/
+// CSS/SCSS files to import from sass folder
+@import "base";
+@import "index-0";
+@import "index-1";
+@import "index-2";
